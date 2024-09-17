@@ -1,4 +1,4 @@
-import Transaction from "../models/transactionInterface";
+import { Transaction } from "../models/transactionsInterface";
 
 class Account {
   protected transactions: Array<Transaction> = [];

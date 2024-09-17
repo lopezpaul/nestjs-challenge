@@ -1,6 +1,6 @@
 import Account from "./account";
 import BankingSystemInterface from "../models/bankingSystemInterface";
-import TransactionTotal from "../models/transactionTotalInterface";
+import { TransactionTotal } from "../models/transactionsInterface";
 
 class BankingSystem extends BankingSystemInterface {
   public accounts: Map<string, Account>;
@@ -88,10 +88,8 @@ class BankingSystem extends BankingSystemInterface {
     accounts.sort((a, b) => {
       if (b.amount !== a.amount) {
         return b.amount - a.amount;
-      } else {
-        return a.accountId.localeCompare(b.accountId);
       }
-      return 0;
+      return a.accountId.localeCompare(b.accountId);
     });
     return accounts.slice(0, totalAccounts);
   }
