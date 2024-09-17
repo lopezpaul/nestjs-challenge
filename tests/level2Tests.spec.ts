@@ -25,36 +25,13 @@ describe("Level 2 tests", () => {
     expect(system.transfer(7, "account2", "account3", 100)).toBe(900);
     expect(system.transfer(8, "account2", "account3", 100)).toBe(800);
     expect(system.transfer(9, "account3", "account1", 100)).toBe(1100);
-    const accounts = system.accounts;
-    // console.log("cuentas", accounts);
 
     const expected = ["account2(200)", "account3(100)", "account1(0)"];
     const actual = system.topSpenders(10, 3);
-    // for (const [id, account] of system.accounts) {
-    //   console.group(id);
-    //   // console.info(id, account);
-    //   console.info(
-    //     id,
-    //     "transactionAmount",
-    //     account.getTotalTransactionsAmount(),
-    //     "transactionCount",
-    //     account.getTransactionCount()
-    //   );
-    //   console.table(account.getTransactions());
-    //   console.groupEnd;
-    // }
-    //   const error = `
-    //   Los arreglos no son iguales.
-    //   Esperado: ${JSON.stringify(expected)}
-    //   Recibido: ${JSON.stringify(actual)}
-    // `;
-    // console.log("Actual", actual);
-    // console.log("Expected", expected);
     expect(actual).toEqual(expected);
   }, 400);
 
   it("Test level 2 case 02 basic top spenders 2", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -72,7 +49,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 03 basic top spenders 3", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -95,7 +71,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 04 top spenders with failed transfers", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -117,7 +92,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 05 top spenders alphabetical order 1", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "accountA")).toBeTruthy();
     expect(system.createAccount(2, "accountC")).toBeTruthy();
     expect(system.createAccount(3, "accountB")).toBeTruthy();
@@ -135,7 +109,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 06 top spenders alphabetical order 2", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc3")).toBeTruthy();
     expect(system.createAccount(3, "acc2")).toBeTruthy();
@@ -147,7 +120,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 07 all commands 1", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -180,7 +152,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 08 all commands 2", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -286,7 +257,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 09 all commands 3", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -333,7 +303,6 @@ describe("Level 2 tests", () => {
   }, 400);
 
   it("Test level 2 case 10 all commands 4", async function () {
-    // this.timeout(400);
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();

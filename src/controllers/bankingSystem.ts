@@ -49,7 +49,7 @@ class BankingSystem extends BankingSystemInterface {
       return null;
     }
     const sourceAccount = this.accounts.get(sourceAccountId)!;
-    if (amount > sourceAccount.amount) {
+    if (amount > sourceAccount.balance) {
       return null;
     }
     const balance = sourceAccount!.decreaseAmount(amount, timestamp);

@@ -1,16 +1,11 @@
-interface Transaction {
-  type: string;
-  accountId: string;
-  amount: number;
-  timestamp: number;
-}
+import Transaction from "../models/transactionInterface";
 
 class Account {
-  transactions: Array<Transaction> = [];
+  protected transactions: Array<Transaction> = [];
 
   constructor(
     protected readonly accountId: string,
-    public amount: number = 0,
+    protected amount: number = 0,
     protected timestamp: number = 0
   ) {
     if (amount < 0) {
@@ -22,10 +17,6 @@ class Account {
     return this.amount;
   }
 
-  get transactionsAsString(): string {
-    return JSON.stringify(this.transactions);
-  }
-
   increaseAmount(amount: number, timestamp: number = 0) {
     this.amount += amount;
     this.timestamp = timestamp;
@@ -35,22 +26,12 @@ class Account {
   decreaseAmount(amount: number, ts: number = 0) {
     this.amount -= amount;
     this.timestamp = ts;
-    this._addTransaction("withdrawal", amount, ts);
+    this.addTransaction("withdrawal", amount, ts);
     return this.amount;
   }
 
   getTransactions() {
     return this.transactions;
-  }
-
-  _addTransaction(type: string, amount: number, timestamp: number = 0): void {
-    const newTransaction: Transaction = {
-      accountId: this.accountId,
-      type: type,
-      amount: amount,
-      timestamp: timestamp,
-    };
-    this.transactions.push(newTransaction);
   }
 
   getTotalTransactionsAmount(): number {
@@ -59,6 +40,20 @@ class Account {
 
   getTransactionCount(): number {
     return this.transactions.length;
+  }
+
+  protected addTransaction(
+    type: string,
+    amount: number,
+    timestamp: number = 0
+  ): void {
+    const newTransaction: Transaction = {
+      accountId: this.accountId,
+      type: type,
+      amount: amount,
+      timestamp: timestamp,
+    };
+    this.transactions.push(newTransaction);
   }
 }
 
