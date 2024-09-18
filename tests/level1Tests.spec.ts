@@ -18,7 +18,7 @@ describe("Level 1 tests", () => {
     expect(system.createAccount(2, "account2")).toBeTruthy();
   }, 400);
 
-  it("Test level 1 case 02 basic create and deposit", async function () {
+  it("Test level 1 case 02 basic create and deposit", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.deposit(3, "account1", 2500)).toBe(2500);
@@ -26,7 +26,7 @@ describe("Level 1 tests", () => {
     expect(system.deposit(5, "account2", 1000)).toBe(1000);
   }, 400);
 
-  it("Test level 1 case 03 basic create deposit and transfer 1", async function () {
+  it("Test level 1 case 03 basic create deposit and transfer 1", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.deposit(3, "account1", 2000)).toBe(2000);
@@ -49,13 +49,13 @@ describe("Level 1 tests", () => {
     expect(system.deposit(10, "account3", 100)).toBe(1500);
   });
 
-  it("Test level 1 case 05 create edge case", async function () {
+  it("Test level 1 case 05 create edge case", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account1")).toBeFalsy();
     expect(system.createAccount(3, "account2")).toBeTruthy();
   }, 400);
 
-  it("Test level 1 case 06 deposit edge cases", async function () {
+  it("Test level 1 case 06 deposit edge cases", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.deposit(3, "account1", 100)).toBe(100);
@@ -63,7 +63,7 @@ describe("Level 1 tests", () => {
     expect(system.deposit(5, "account3", 100)).toBeNull();
   }, 400);
 
-  it("Test level 1 case 07 transfer edge cases", async function () {
+  it("Test level 1 case 07 transfer edge cases", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.deposit(3, "account1", 2500)).toBe(2500);
@@ -79,7 +79,7 @@ describe("Level 1 tests", () => {
     expect(system.transfer(13, "account3", "account2", 100)).toBeNull();
   }, 400);
 
-  it("Test level 1 case 08 all successful operations", async function () {
+  it("Test level 1 case 08 all successful operations", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();

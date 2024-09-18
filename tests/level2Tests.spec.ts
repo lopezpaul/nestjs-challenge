@@ -13,7 +13,7 @@ describe("Level 2 tests", () => {
     system = new BankingSystem();
   });
 
-  it("Test level 2 case 01 basic top spenders 1", async function () {
+  it("Test level 2 case 01 basic top spenders 1", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -31,7 +31,7 @@ describe("Level 2 tests", () => {
     expect(actual).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 02 basic top spenders 2", async function () {
+  it("Test level 2 case 02 basic top spenders 2", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -48,7 +48,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(11, 4)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 03 basic top spenders 3", async function () {
+  it("Test level 2 case 03 basic top spenders 3", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -70,7 +70,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(16, 4)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 04 top spenders with failed transfers", async function () {
+  it("Test level 2 case 04 top spenders with failed transfers", async () => {
     expect(system.createAccount(1, "account1")).toBeTruthy();
     expect(system.createAccount(2, "account2")).toBeTruthy();
     expect(system.createAccount(3, "account3")).toBeTruthy();
@@ -91,7 +91,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(15, 4)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 05 top spenders alphabetical order 1", async function () {
+  it("Test level 2 case 05 top spenders alphabetical order 1", async () => {
     expect(system.createAccount(1, "accountA")).toBeTruthy();
     expect(system.createAccount(2, "accountC")).toBeTruthy();
     expect(system.createAccount(3, "accountB")).toBeTruthy();
@@ -108,7 +108,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(13, 3)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 06 top spenders alphabetical order 2", async function () {
+  it("Test level 2 case 06 top spenders alphabetical order 2", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc3")).toBeTruthy();
     expect(system.createAccount(3, "acc2")).toBeTruthy();
@@ -119,7 +119,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(7, 3)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 07 all commands 1", async function () {
+  it("Test level 2 case 07 all commands 1", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -151,7 +151,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(36, 5)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 08 all commands 2", async function () {
+  it("Test level 2 case 08 all commands 2", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -256,7 +256,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(54, 10)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 09 all commands 3", async function () {
+  it("Test level 2 case 09 all commands 3", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
@@ -302,7 +302,7 @@ describe("Level 2 tests", () => {
     expect(system.topSpenders(31, 10)).toEqual(expected);
   }, 400);
 
-  it("Test level 2 case 10 all commands 4", async function () {
+  it("Test level 2 case 10 all commands 4", async () => {
     expect(system.createAccount(1, "acc1")).toBeTruthy();
     expect(system.createAccount(2, "acc2")).toBeTruthy();
     expect(system.createAccount(3, "acc3")).toBeTruthy();
