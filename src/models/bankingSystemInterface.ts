@@ -1,3 +1,4 @@
+type numberOrNull = number | null;
 /**
  * `BankingSystem` interface.
  */
@@ -12,9 +13,10 @@ class BankingSystemInterface {
    *
    * @param {number} timestamp
    * @param {string} accountId
+   * @param {number} amount
    * @returns {boolean}
    */
-  createAccount(timestamp: number, accountId: string): boolean {
+  createAccount(timestamp: number, accountId: string, amount: number): boolean {
     // default implementation
     return false;
   }
@@ -30,9 +32,9 @@ class BankingSystemInterface {
    * @param {number} timestamp
    * @param {string} accountId
    * @param {number} amount
-   * @returns {number | null}
+   * @returns {numberOrNull}
    */
-  deposit(timestamp: number, accountId: string, amount: number): number | null {
+  deposit(timestamp: number, accountId: string, amount: number): numberOrNull {
     // default implementation
     return null;
   }
@@ -53,17 +55,17 @@ class BankingSystemInterface {
    * @param {string} sourceAccountId
    * @param {string} targetAccountId
    * @param {number} amount
-   * @returns {number | null}
+   * @returns {numberOrNull}
    */
   transfer(
     timestamp: number,
     sourceAccountId: string,
     targetAccountId: string,
     amount: number
-  ): number | null {
+  ): numberOrNull {
     // default implementation
     return null;
   }
 }
 
-export default BankingSystemInterface;
+export { numberOrNull, BankingSystemInterface };
